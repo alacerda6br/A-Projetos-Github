@@ -36,7 +36,7 @@ def valida_cnpj(cnpj):
         return False
 
     # Calcula e valida os dois dígitos verificadores
-    multiplicador = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
+    multiplicador = (6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2)
     soma1 = soma2 = 0
 
     for n in range(1, len(multiplicador)):
