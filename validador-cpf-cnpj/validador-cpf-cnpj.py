@@ -67,20 +67,22 @@ while True:
     print('Qual documento deseja validar?')
     print('Digite 1 para CPF')
     print('Digite 2 para CNPJ')
-    opcao = int(input('==> '))
+    opcao = input('==> ')
 
-    if opcao == 1:
+    if opcao == '1':
         cpf = input('Digite o CPF: ')
         if valida_cpf(cpf):
-            print(f'\nO CPF {cpf} está correto.')
+            print(f'\nO CPF {cpf} está CORRETO.')
         else:
-            print(f'\nO CPF {cpf} está inválido.')
-    elif opcao == 2:
+            print(f'\nO CPF {cpf} está INVÁLIDO.')
+    elif opcao == '2':
         cnpj = input('Digite o CNPJ: ')
         if valida_cnpj(cnpj):
-            print(f'\nO CNPJ {cnpj} está correto.')
+            print(f'\nO CNPJ {cnpj} está CORRETO.')
         else:
-            print(f'\nO CNPJ {cnpj} está inválido.')
+            print(f'\nO CNPJ {cnpj} está INVÁLIDO.')
+    else:
+        print('Opção inválida!')
 
     while True:
         # Repetição para continuar a consulta
