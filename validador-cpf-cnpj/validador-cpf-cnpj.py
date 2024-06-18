@@ -1,6 +1,5 @@
 import os
 
-
 def valida_cpf(cpf):
     # Remove caracteres não numéricos
     cpf = ''.join(filter(str.isdigit, cpf))
@@ -21,7 +20,6 @@ def valida_cpf(cpf):
             return False
 
     return True
-
 
 def valida_cnpj(cnpj):
     # Remove caracteres não numéricos
@@ -61,29 +59,7 @@ def valida_cnpj(cnpj):
 
     return cnpj[-2:] == str(digito1) + str(digito2)
 
-
-while True:
-    os.system('cls')
-    print('Qual documento deseja validar?')
-    print('Digite 1 para CPF')
-    print('Digite 2 para CNPJ')
-    opcao = input('==> ')
-
-    if opcao == '1':
-        cpf = input('Digite o CPF: ')
-        if valida_cpf(cpf):
-            print(f'\nO CPF {cpf} está CORRETO.')
-        else:
-            print(f'\nO CPF {cpf} está INVÁLIDO.')
-    elif opcao == '2':
-        cnpj = input('Digite o CNPJ: ')
-        if valida_cnpj(cnpj):
-            print(f'\nO CNPJ {cnpj} está CORRETO.')
-        else:
-            print(f'\nO CNPJ {cnpj} está INVÁLIDO.')
-    else:
-        print('Opção inválida!')
-
+def nova_consulta():
     while True:
         # Repetição para continuar a consulta
         fim = str(input('\nDeseja fazer outra consulta? [S/N] ')).upper()[0]
@@ -93,4 +69,35 @@ while True:
         print('ERRO! Por favor, digite apenas S ou N.')
     if fim == 'N':
         os.system('cls')
-        break
+        return False
+    else:
+        return True
+
+def iniciar():
+    acao = True
+    while acao == True:
+        os.system('cls')
+        print('Qual documento deseja validar?')
+        print('Digite 1 para CPF')
+        print('Digite 2 para CNPJ')
+        opcao = input('==> ')
+
+        if opcao == '1':
+            cpf = input('Digite o CPF: ')
+            if valida_cpf(cpf):
+                print(f'\nO CPF {cpf} está CORRETO.')
+            else:
+                print(f'\nO CPF {cpf} está INVÁLIDO.')
+        elif opcao == '2':
+            cnpj = input('Digite o CNPJ: ')
+            if valida_cnpj(cnpj):
+                print(f'\nO CNPJ {cnpj} está CORRETO.')
+            else:
+                print(f'\nO CNPJ {cnpj} está INVÁLIDO.')
+        else:
+            print('Opção inválida!')
+
+        acao = nova_consulta()
+
+if __name__ == '__main__':
+    iniciar()
