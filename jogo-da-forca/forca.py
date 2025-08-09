@@ -13,6 +13,7 @@ chances = 7
 
 ganhou = False
 
+
 def palavra_aleatoria(lista):
     # função para escolher uma palavra aleatória
     tamanho = len(lista)
@@ -20,12 +21,13 @@ def palavra_aleatoria(lista):
     palavra_aleatoria = lista[sorteio]
     return palavra_aleatoria
 
+
 def menu():
     global palavra, tipo
     while True:
         print('* * * JOGO DA FORCA * * *')
         print('Escolha uma opção!')
-        print(f'1 para Frutas\n2 para Objetos')
+        print('1 para Frutas\n2 para Objetos')
         lt = str(input('==> '))
 
         if lt == '1':
@@ -41,6 +43,7 @@ def menu():
         else:
             print('Opção inválida, tente novamente!')
 
+
 def continuar_jogo():
     global fim, letras_usuario, chances, ganhou
     while True:
@@ -53,6 +56,7 @@ def continuar_jogo():
             os.system('cls')
             break
         print('ERRO! Por favor, digite apenas S ou N.')
+
 
 def logica_jogo():
     while True:
@@ -79,8 +83,9 @@ def logica_jogo():
             if letra not in letras_usuario:
                 ganhou = False
 
-        if chances == 0 or ganhou == True:
+        if chances == 0 or ganhou is True:
             break
+
 
 def jogar():
     while True:
@@ -98,5 +103,6 @@ def jogar():
         if fim == 'N':
             os.system('cls')
             break
+
 
 jogar()
