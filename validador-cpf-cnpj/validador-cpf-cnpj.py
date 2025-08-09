@@ -1,5 +1,6 @@
 import os
 
+
 def valida_cpf(cpf):
     # Remove caracteres não numéricos
     cpf = ''.join(filter(str.isdigit, cpf))
@@ -20,6 +21,7 @@ def valida_cpf(cpf):
             return False
 
     return True
+
 
 def valida_cnpj(cnpj):
     # Remove caracteres não numéricos
@@ -59,6 +61,7 @@ def valida_cnpj(cnpj):
 
     return cnpj[-2:] == str(digito1) + str(digito2)
 
+
 def nova_consulta():
     while True:
         # Repetição para continuar a consulta
@@ -73,9 +76,10 @@ def nova_consulta():
     else:
         return True
 
+
 def iniciar():
     acao = True
-    while acao == True:
+    while acao is True:
         os.system('cls')
         print('Qual documento deseja validar?')
         print('Digite 1 para CPF')
@@ -98,6 +102,7 @@ def iniciar():
             print('Opção inválida!')
 
         acao = nova_consulta()
+
 
 if __name__ == '__main__':
     iniciar()
